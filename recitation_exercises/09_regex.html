@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JS Regex exmaples</title>
+<script type="text/javascript">
+
+	function searcher(s, p) {
+		console.log(`searching through string ${s} for pattern ${p}:`);
+		console.log(s.search(p));
+	}
+
+	function main() {
+
+		/* Regular expressions exercise 
+		 *
+		 * Your task is to write regular expressions that match
+		 * following patterns. The files (js14_regex.html,
+		 * js14_regex.html, js15_more_regex.html) in the example
+		 * folder might provide some help.
+		*/
+
+
+		//----------------------- Problem 1-----------------------//
+		/* Write a regular expression that matches all lowercase strings that 
+		   contain the vowels in order (a,e,i,o,u).
+
+		   Should Match: aeiou, aaeeiouu, xyzabcdiou
+		   Should Not Match: eiou, aaaieou, (empty string)
+		*/
+		const re1;
+		console.log("Should match");
+		searcher("aeiou", re1);
+		searcher("aaeeiouu", re1);
+		searcher("xyabeioklump", re1);
+
+		console.log("Should not match");
+		searcher("eiou", re1);
+		searcher("aaaieou", re1);
+		searcher("", re1);
+		console.log("\n\n");
+
+		//----------------------- Problem 2-----------------------//
+		/* Write a regular expression that matches all binary string with even number of ones
+
+		   Should Match: 011, 0101, 000110, 010010011
+		   Should Not Match: 1, 10, 111
+		*/
+		const re2;
+		console.log("Should match");
+		searcher("011", re2);
+		searcher("0101", re2);
+		searcher("000110", re2);
+		searcher("010010011", re2);
+
+		console.log("Should not match");
+		searcher("1", re2);
+		searcher("10", re2);
+		searcher("111", re2);
+		console.log("\n\n");
+
+
+
+		//----------------------- Problem 3-----------------------//
+		/* Write a regular expression that matches function definitions of python.
+		   An example function definition is
+
+		   def addNumbers(a,b):
+
+		   
+		   The string must start with a def, then have the function name (cannot start with integer)
+		   and then have the parameters in paranthesis separated by commas (again these cannot start 
+		   with an integer).
+
+		   Should Match: def addNumbers(a,b):, def say_hello():, def mult3(a,b,c):
+		   Should Not Match: Def 234(a,b):, adef divide(dividend, divisor):, def addNumbers(1a,2b):
+		*/
+		const re3;
+   		console.log("Should match");
+		searcher("def addNumbers(a,b):", re3);
+		searcher("def say_hello():", re3);
+		searcher("def mult3(a,b,c):", re3);
+
+		console.log("Should not match");
+		searcher("Def 234(a,b):", re3);
+		searcher("adef divide(dividend, divisor):", re3);
+		searcher("def addNumbers(1a,2b):", re3);
+		console.log("\n\n");
+
+	}
+
+	window.addEventListener("load", main);
+</script>
+</head>
+<body>
+	<h1>Check the JS Console</h1>
+</body>
+</html>

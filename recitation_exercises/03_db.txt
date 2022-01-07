@@ -1,0 +1,18 @@
+1,Allegheny National Forest,3500
+2,Pennsylvania Forest,2700
+3,Stone Valley,5000
+4,Big Woods,3000
+5,Crooked Forest,2400
+
+PA,50000
+OH,45000
+VA,35000
+
+1,1,OH,3500
+2,2,OH,2700
+3,3,OH,1500
+4,3,PA,2100
+5,3,VA,1400
+6,4,PA,1200
+7,4,VA,1800
+8,5,VA,2400

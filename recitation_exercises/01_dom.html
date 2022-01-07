@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Exercise</title>
+<style>
+	.green {background-color: green;}
+	.red {background-color: red;}
+	.blue {background-color: blue;}
+</style>
+<script type="text/javascript">
+	/* DOM Recitation Exercise
+	 *
+	 * Write JavaScript to add new text to the current HTML document whenever
+	 * the user clicks the button. The contents of the textbox should be added
+	 * to the current HTML document in a new div. That div should have its
+	 * backgroun color set to be red, green, or blue (or nothing), depending on
+	 * the value of the radio buttons. You should accomplish this using only
+	 * JavaScript. Note the CSS styling provided above.
+	 */
+	// Your code starts here
+	// End your code
+</script>
+</head>
+<body>
+	<form id="theForm" onsubmit="return false">
+		<div>
+		<input type="text" id="theText" size="50" value="" />
+		</div>
+
+		<div>
+		<input type="radio" id="red" name="color" value="red" />
+		<label for="red">Red</label>
+		</div>
+
+		<div>
+		<input type="radio" id="green" name="color" value="green" />
+		<label for="green">Green</label>
+		</div>
+
+		<div>
+		<input type="radio" id="blue" name="color" value="blue" />
+		<label for="blue">Blue</label>
+		</div>
+
+		<div>
+		<input type="radio" id="none" name="color" value="none" checked />
+		<label for="none">None</label>
+		</div>
+
+		<div>
+		<input type="button" id="addButton" value="Add line to document"/>
+		</div>
+	</form>
+</body>
+</html>
