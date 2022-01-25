@@ -1,0 +1,49 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            display() {
+                console.log(`\n\nName: ${this.name}`);
+                console.log("Age: " + this.age + "\n");
+            }
+        }
+
+        class Student extends Person {
+            constructor(name, age) {
+                super(name, age);
+                this.classes = [];
+            }
+            add_class(new_class) {
+                this.classes.push(new_class);
+            }
+            display() {
+                console.log("Student Info")
+                super.display()
+                console.log(`Classes: " ${this.classes}  \n`);
+            }
+        }
+
+        nurse = new Person("Elaine Smith", 25);
+        nurse.display();
+
+        john = new Student("John", 20);
+        john.add_class("Chemistry");
+        john.add_class("Intro to Programming");
+        john.add_class("Physics");
+        john.display();
+    </script>
+</body>
+
+</html>
