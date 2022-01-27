@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = 1;
+        var b = 2;
+        if (a === 1) {
+            var a = 11;
+            let b = 22;
+            var c = 200;   // <================= what happpen here?
+            let d = 400;
+            console.log("inside the IF block...")
+            console.log(a);  // 11
+            console.log(b);  // 22
+        }
+
+        console.log("outside the IF block...")
+        console.log(a); // 11
+        console.log(b); // 2
+        console.log(c); // 11   <==============
+        console.log(d); // 2
+
+    </script>
+</body>
+
+</html>

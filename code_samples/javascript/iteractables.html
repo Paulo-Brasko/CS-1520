@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = ['el1', 'el2', 'el3'];
+
+        arr["addedProp"] = 'arrProp';
+
+        // elKey are the property keys
+        console.log("for in");
+        for (let elKey in arr) {
+            console.log(elKey);
+        }
+
+        for (let elKey in arr) {
+            console.log(arr[elKey]);
+        }
+
+        // elValue are the property values
+        console.log("\nfor of");
+        for (let elValue of arr) {
+            console.log(elValue)
+        }
+
+    </script>
+</body>
+
+</html>
