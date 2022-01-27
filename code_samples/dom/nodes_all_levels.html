@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="children_example.css">
+    <title>Paulo's Personal Info</title>
+</head>
+
+<body>
+    <h1> HTML & CSS Lab </h1>
+    <h1 id="first_h1"> Paulo Personal Page</h1>
+    <img src="https://source.unsplash.com/random/400x400" alt="Italian Trulli">
+    <h2> General Info </h2>
+    <div id="first_div">
+        <ul class="list">
+            <li> name: Paulo Brasko </li>
+            <li> email: brasko@pitt.edu</li>
+            <li> address: 123 Banana street, PA</li>
+        </ul>
+        <h2> Hobbies </h2>
+        <ul class="list">
+            <li> Jogging </li>
+            <li> Sailing </li>
+            <li> Tennis </li>
+        </ul>
+    </div>
+    <script>
+
+        const displayNodesInfo = (items, space="") => {
+            for (node of items) {
+                const node2 = node.childNodes;
+                if (node2.length > 1) {
+                    displayNodeFeatures(node, space);
+                    displayNodesInfo(node2, space+="   ");
+                } else {
+                    displayNodeFeatures(node, space);
+                }
+            }
+        }
+
+        const displayNodeFeatures = (item, space) => {
+            let s = `${space} node: ${item}`;
+
+			if (item instanceof HTMLElement)
+				s += `\n${space} Is an HTMLElement`;
+
+			if (item instanceof Element)
+				s += `\n${space} Is an Element`;
+
+			if (item instanceof Text) 
+				s += `\n${space} Is a Text`;
+            
+			if (item instanceof Node)
+				s += `\n${space} Is a Node`;
+
+            console.log(s);
+        }
+
+        const nodes = document.body.childNodes;
+        displayNodesInfo(nodes);
+    </script>
+</body>
+
+</html>

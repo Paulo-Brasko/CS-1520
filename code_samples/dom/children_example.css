@@ -1,0 +1,18 @@
+h1 {
+    color: blue;
+    text-align: left;
+  }
+
+  #first_h1 {
+    color: orange;
+    text-align: left;
+  }
+  
+  h2 {
+    color: green;
+  }
+
+  .list {
+      color: brown;
+      font-size: 20px;
+  }
