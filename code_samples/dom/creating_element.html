@@ -11,8 +11,8 @@
     <img src="https://source.unsplash.com/random/400x400" alt="Italian Trulli">
     <h2> General Info </h2>
     <div id="first_div">
-        <ul class="list">
-            <li id="first_list_item"> name: Paulo Brasko </li>
+        <ul id="first_list_item">
+            <li> name: Paulo Brasko </li>
             <li> email: brasko@pitt.edu</li>
             <li> address: 123 Banana street, PA</li>
         </ul>
@@ -28,19 +28,19 @@
         newElement.textContent = "New H1 element!";
         document.body.appendChild(newElement);
 
-        // const list_item = document.getElementById("first_list_item");
-        // const newItem = document.createElement("li");
-        // newItem.textContent = "New item in the list!";
-        // newItem.style.color="black";
-        // list_item.appendChild(newItem);
+        const list_item = document.getElementById("first_list_item");
+        const newItem = document.createElement("li");
+        newItem.textContent = "New item in the list!";
+        newItem.style.color="black";
+        list_item.appendChild(newItem);
 
         // list_item.style.color = "blue";
 
-        // const h2_items = document.getElementsByTagName("h2");
-        // console.log(h2_items);
-        // for (current_h2 of h2_items) {
-        //     current_h2.style.color = "orange";
-        // }
+        const h2_items = document.getElementsByTagName("h2");
+        console.log(h2_items);
+        for (current_h2 of h2_items) {
+            current_h2.style.color = "orange";
+        }
         
     </script>
 </body>

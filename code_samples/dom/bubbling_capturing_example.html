@@ -5,65 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        var onOff = true;
-        function changeTableBorder() {
-            console.log("Table border function");
-            if (onOff) {
-                this.style.borderColor = "#FF0000";
-            } else {
-                this.style.borderColor = "#000000";
-            }
-            onOff = !onOff;
-        }
-
-        function changeRowColor() {
-            console.log("Row function");
-            const children = this.getElementsByTagName("td");
-            for (let i=0; i<children.length; i++) {
-                children[i].style.backgroundColor="#0000ee";
-            }
-        }
-
-        function changeCellBackgroundColor() {
-            console.log("the cell function");
-            this.style.backgroundColor="#00ee00";
-        }
-
-        function bodyFunction() {
-            console.log("the body function");
-        }
-
-        function setup() {
-            const theTable = document.getElementById("theTable");
-            const theBody = document.getElementById("theBody");
-
-            theBody.addEventListener("click", bodyFunction);
-            theTable.addEventListener("click", changeTableBorder);
-
-            const rows = document.getElementById("theTable").getElementsByTagName("tr");
-            for (var row of rows) {
-                row.addEventListener('click', changeRowColor, true);
-                // row.addEventListener('click', changeRowColor);
-            }
-
-            const cells = document.getElementById("theTable").getElementsByTagName("td");
-            for (var cell of cells) {
-                console.log("banana");
-                cell.addEventListener('click', changeCellBackgroundColor);
-            }
-        }
-    </script>
+    <script  type="text/javascript" src="bubbling_capture_example.js">  </script>
 </head>
 
 <body>
     <h1>Heading 1 text</h1>
-    <h2>Heading 2 text</h2>
     <div>
         <p> First paragraph of div 1</p>
-        <p> Second paragraph of div 1</p>
         <table id="theTable" border="1">
-            <tbody  id="theBody">
+            <caption id="tableCaptionId">Monthly savings</caption>
+            <tbody id="theTableBody">
                 <tr>
                     <td> a11 </td>
                     <td> a12 </td>
@@ -90,8 +41,6 @@
         <li> <a href=""> list item 2 </a> </li>
         <li> list item 3</li>
     </ul>
-    <script> setup(); </script>
-    <!--script> check(document.body.children); </script-->
 </body>
 
 </html>
