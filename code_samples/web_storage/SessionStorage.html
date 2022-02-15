@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+    <link rel="stylesheet" href="SessionStorage.css">
+    <script type="text/javascript" src="SessionStorage.js"></script>
+</head>
+
+<body>
+    <h2 id="title"> Local versus Session Storage </h2>
+
+    <fieldset>
+        <legend> Insert Data into Local Storage </legend>
+        <input id="inputKey" type="text" placeholder="Enter key...">
+        <input id="inputValue" type="text" placeholder="Enter Value...">
+        <br><br>
+        <button type="button" id="buttonInsertLocal"> Insert Local Storage</button>
+        <button type="button" id="buttonInsertSession"> Insert Session Storage</button>
+    </fieldset>
+
+    <fieldset>
+        <legend> Delete Data </legend>
+        <input id="deleteKey" type="text" placeholder="Enter key...">
+        <button type="button" id="buttonDeleteStorage"> Delete Data from Storage</button>
+        <button type="button" id="buttonDeleteSession"> Delete Data from Session</button>
+    </fieldset>
+
+    <fieldset>
+        <legend> Local Storage </legend>
+        <div id="outputLocalList"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend> Session Storage </legend>
+        <div id="outputSessionList"></div>
+    </fieldset>
+</body>
+
+</html>
