@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "title": "Brigadeiros",
+      "body": "Brazil’s favorite treat, brigadeiros are incredibly addicting. Made with only 5 ingredients, these fudgy balls are easy to make and will win your heart in one bite!",
+      "author": "Mrs. Cozinheira",
+      "id": 1
+    },
+    {
+      "title": "Guava",
+      "body": "Brazil is the world's largest producer of guavas ( goiabain Portuguese), even though it is geographically very wide-spread and popular in tropical regions around the globe, from Mexico to South Africa and from India to Hawaii. The guava tree itself (Genus:Psidium) originated somewhere between Mexico and Northern South America, but it has been cultivated since pre-history and has spread so far that its origins are lost in time.",
+      "author": "Mr. Agronomo",
+      "id": 2
+    },
+    {
+      "title": "Soap Operas",
+      "author": "Miss Telenovela",
+      "body": "Brazilian novelas (soap operas) play a central role in Brazilian media and are a focal point in everyday conversation. Their popularity is reflected in the numbers; Avenida Brasil, one of the most popular novelas, earned approximately $1 billion in revenue. From the first novela, Sua Vida Me Pertence (Your Life Belongs To Me) in 1951, their popularity has snowballed. We explore the seven most popular novelas throughout Brazilian novela history.",
+      "id": 3
+    },
+    {
+      "title": "Brazilian Samba",
+      "author": "Mr. Sambista",
+      "body": "samba, ballroom dance of Brazilian origin, popularized in western Europe and the United States in the early 1940s. Characterized by simple forward and backward steps and tilting, rocking body movements, it is danced to music in 4/4 time with syncopated rhythm.",
+      "id": 4
+    }
+  ]
+}

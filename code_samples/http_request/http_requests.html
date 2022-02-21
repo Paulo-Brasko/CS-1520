@@ -1,0 +1,55 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http_requests.js"></script>
+</head>
+
+<body>
+    <h2 id="title"> HTTP Requests - JavaScript </h2>
+    <fieldset>
+        <legend> View All Blogs </legend>
+        <button type="button" id="viewAllBlogEntriesButton"> View all blog entries </button>
+        <br>        
+    </fieldset>
+
+    <fieldset>
+        <legend> View details of a single Blog </legend>
+        <button type="button" id="getOneBlogEntryButton"> View Blog # </button>
+        <input  type="text"   id="blogNumberTextInput"   placeholder="Enter blog number...">
+        <br>
+    </fieldset>
+
+    <fieldset>
+        <legend> Add a new Blog </legend>
+        <button type="button" id="addNewBlogButton"> Add new Blog </button> 
+        <input  type="text"   id="insertNewBlogTitleTextInput" placeholder="Enter Title...">
+        <input  type="text"   id="insertNewBlogAuthorTextInput" placeholder="Enter Author...">
+        <input  type="text"   id="insertNewBlogBodyTextInput" placeholder="Enter content..."><br>
+    </fieldset>
+
+    <fieldset>
+        <legend> Change an existing Blog </legend>
+        <button type="button" id="changeExistingBlogButton"> Change Blog </button> 
+        <input  type="text"   id="changeExistingBlogNumberTextInput" placeholder="Enter Blog Number..."><br>
+        <input  type="text"   id="changeExistingBlogTitleTextInput" placeholder="Enter Title...">
+        <input  type="text"   id="changeExistingBlogAuthorTextInput" placeholder="Enter Author...">
+        <input  type="text"   id="changeExistingBlogBodyTextInput" placeholder="Enter content..."><br>
+    </fieldset>
+
+    <fieldset>
+        <legend> Deleting an existing Blog </legend>
+        <button type="button" id="deleteExistingBlogButton"> Delete Blog </button> 
+        <input  type="text"   id="deleteExistingBlogNumberTextInput" placeholder="Enter Blog Number..."><br>
+    </fieldset>
+
+    <fieldset>
+        <legend> Response Display </legend>
+        <div id="displayDivId"></div>
+    </fieldset>
+</body>
+
+</html>
