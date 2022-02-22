@@ -28,12 +28,11 @@ listLocalStorage = function () {
 }
 
 listSessionStorage = function () {
-    outputSessionList.innerHTML = "";
-    for (let i = 0; i < sessionStorage.length; i++) {
-        const key = sessionStorage.key(i);
-        const value = sessionStorage.getItem(key);
-        outputSessionList.innerHTML += `${key}: ${value}<br />`;
-    }
+
+    // initialize the innerHTML of outputSessionList
+
+    // loop over all the sessionStorage data and append to the innerHTML
+
 }
 
 configureDOOMElementListeners = () => {
@@ -88,28 +87,16 @@ configureDOOMElementListeners = () => {
 
 retrieveAndStoreData = (storageType) => {
     // getting the key and value from the page text input fields
-    const key = inputKey.value;
-    const value = inputValue.value;
 
     // if the key and value are not empty proceed storing them
-    if (key && value) {
-        if (storageType === "local") {
-            localStorage.setItem(key, value);
-        } else {
-            sessionStorage.setItem(key, value);
-        }
-    }
+
 }
 
 retrieveAndDeleteData = (storageType) => {
-    const key = deleteKey.value;
-    if (key) {
-        if (storageType === "local") {
-            localStorage.removeItem(key);
-        } else {
-            sessionStorage.removeItem(key);
-        }
-    }
+    // getting the key from the page text input field
+
+    // if the key and value are not empty proceed delete them
+
 }
 
 emptyInputFields = () => {
