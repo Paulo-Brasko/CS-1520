@@ -2,7 +2,7 @@ from flask import Flask, request, abort, url_for, redirect
 
 app = Flask(__name__)
 
-users = {"alice":"qwert", "bob":"asdfg", "charlie":"zxcvb"}
+users = {"alice": "qwert", "bob": "asdfg", "charlie": "zxcvb"}
 
 loginPage = """<!DOCTYPE html>
 <html>
@@ -46,35 +46,43 @@ otherProfile = """<!DOCTYPE html>
 
 @app.route("/")
 def default():
+	print("redirecting to login_controller for the first time")
 	return redirect(url_for("login_controller"))
-	
+
+
 @app.route("/login/")
 def login_controller():
+	print("going to show the login page")
 	return loginPage.format(url_for("profile"))
+
 
 @app.route("/profile/", methods=["GET", "POST"])
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username=None):
-	rv = None
+    print("inside the profile function")
+    if request.method == "POST":
+        print("post request")
+        print(request.form)	
 
-	if "user" in request.form and "pass" in request.form:
-		if request.form["user"] in users:
-			if users[request.form["user"]] == request.form["pass"]:
-				rv = True
-
-	if username and username in users:
-		rv = otherProfile.format(username)
-	
-	if request.method == "POST":
-		if rv:
-			return curProfile
-		else:
-			abort(401)
-	else:
-		if rv:
-			return rv
-		else:
-			abort(404)
+        if "user" in request.form and "pass" in request.form:
+            print("checking if the user is one of our clients")	
+            if request.form["user"] in users:
+                print("user is one of our clients, checking password...")	
+                if users[request.form["user"]] == request.form["pass"]:
+                    print("password is correct")
+                    return curProfile
+                else:
+                    print("password is incorrect")
+                    abort(401)
+    else:
+        print("GET request")
+        print("checking if the user is one of our clients")
+        if username and username in users:
+            print("user is one of our clients, redirecting page to otherProfile...")
+            return otherProfile.format(username)
+        else:
+            print("user is NOT one of our clients, 404 page...")
+            abort(404)
 	
 if __name__ == "__main__":
 	app.run()
