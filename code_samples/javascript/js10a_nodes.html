@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Click the button to change the background color of all child elements of body.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <h2>I am a h2 element</h2>
+
+    <div>I am a div element</div>
+    <span>I am a span element</span>
+
+    <script>
+        function myFunction() {
+            var c = document.body.children;
+            console.log(c)
+            var i;
+            for (i = 0; i < c.length; i++) {
+                c[i].style.backgroundColor = "red";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

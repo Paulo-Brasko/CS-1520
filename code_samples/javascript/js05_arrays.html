@@ -1,123 +1,143 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>JS Arrays</title>
-<script type="text/javascript">
-	function printIt(a) {
-		console.log("The array contains:");
-		let arr_content = "";
-		for (var i = 0; i < a.length-1; i++)
-			 arr_content = arr_content + a[i] + ":";
-		arr_content = arr_content + a[a.length - 1];
-		console.log(arr_content);
-	}
-
-	function printItRec(a) {
-		console.log("The array contains:");
-		printRec(a);
-	}
-	
-	function printRec(a) {
-		// Print nested arrays recursively
-		for (var i = 0; i < a.length; i++) {
-			if (a[i] instanceof Array) {
-				console.log("[");
-				printRec(a[i]);
-				console.log("]");
+	<title>JS Arrays</title>
+	<script type="text/javascript">
+		function printIt(a) {
+			console.log("The array contains:");
+			let arr_content = "";
+			for (var i = 0; i < a.length - 1; i++){
+				arr_content = arr_content + a[i] + ":";
 			}
-			else
-				console.log(a[i]);
+			arr_content = arr_content + a[a.length - 1];
+			console.log(arr_content);
 		}
-	}
 
-	function by_num(a, b) {
-		var ans = (a - b);
-		return ans;
-	}
-
-	function main() {
-		const a1 = new Array("here", "is", "an", "array", "of", "string", "data");
-		const a2 = new Array(25);
-		const a3 = new Array("10");
-		
-		// Will this error because a2 is declared `const`?
-		for (let i = 0; i < a2.length; i++)
-			a2[i] = (59 * i) % 200;
-		
-		printIt(a1);
-		printIt(a2);
-		printIt(a3);
-
-		console.log("\n");
-
-		a1.sort();
-		printIt(a1);
-		a2.sort();
-		printIt(a2);
-		a2.sort(by_num);
-		printIt(a2);
-
-		console.log("\n");
-		
-		a1.length = 10;
-		printIt(a1);
-		a1[12] = "end";
-		printIt(a1);
-		a1.length = 6;
-		printIt(a1);
-		a1.length = 10;
-		printIt(a1);
-		a1.length = 20;
-		printIt(a1);
-
-		console.log("\n");
-		
-		const s = a1.join();
-		console.log(s);
-
-		console.log("\n");
-		
-		// v This will generate an error v
-		//a3 = new Array(3);
-		const a4 = new Array(3);
-		for (i = 0; i < a4.length; i++)
-		{
-			 a4[i] = new Array(4);
-			 for (let j = 0; j < a4[i].length; j++)
-				  a4[i][j] = (i + 1) * j;
+		function printItRec(a) {
+			console.log("The array contains:");
+			printRec(a);
 		}
-		
-		console.log(typeof(a4));
-		printIt(a4);
-		printItRec(a4);
-		printIt(a4[0]);
-		printIt(a4[1]);
-		printIt(a4[2]);
 
-		// Really, the console does a very good job of logging arrays
-		console.log(a4);		
+		function printRec(a) {
+			// Print nested arrays recursively
+			// 0 1 2 3     <= a[0]   value 3 is located at a[0][3]
+			// 0 2 4 6     <= a[1]
+			// 0 3 6 9     <= a[2]
+			for (var i = 0; i < a.length; i++) {
+				if (a[i] instanceof Array) {
+					console.log("[");
+					printRec(a[i]);
+					console.log("]");
+				}
+				else
+					console.log(a[i]);
+			}
+		}
 
-		console.log("\n");
-		
-		const x = Array(1, 2, 3, 4);
-		const y = Array(1, 2, 3, 4);
-		const z = x;
-		printIt(x);
-		if (x == y) {
-			console.log("x == x");
+		function by_num(a, b) {
+			var ans = (a - b);
+			return ans;
 		}
-		if (x == z) {
-			console.log("x == z");
+
+		function main() {
+			const a1 = new Array("here", "is", "an", "array", "of", "string", "data");
+			const a2 = new Array(25);
+			const a3 = new Array("10");
+
+			// Will this error because a2 is declared `const`?
+			for (let i = 0; i < a2.length; i++)
+				a2[i] = (59 * i) % 200;
+
+			console.log("1: first block")
+			printIt(a1);
+			printIt(a2);
+			printIt(a3);
+
+			console.log("\n\n\n\n");
+
+			console.log("2: second block")
+			a1.sort();
+			printIt(a1);
+			a2.sort();
+			printIt(a2);
+			a2.sort(by_num);
+			printIt(a2);
+
+			console.log("\n\n\n\n");
+
+			console.log("3: third block")
+			a1.length = 10;
+			printIt(a1);
+			a1[12] = "end";
+			printIt(a1);
+			a1.length = 6;
+			printIt(a1);
+			a1.length = 10;
+			printIt(a1);
+			a1.length = 20;
+			printIt(a1);
+
+			console.log("\n\n\n\n");
+
+			console.log("4: fourth block")
+			const s = a1.join();
+			console.log(s);
+
+			console.log("\n\n\n\n");
+
+			// v This will generate an error
+			//a3 = new Array(3);  // 0x34AB
+			console.log("5: fifth block")
+			const a4 = new Array(3);
+			for (i = 0; i < a4.length; i++) {
+				a4[i] = new Array(4);
+				for (let j = 0; j < a4[i].length; j++)
+					a4[i][j] = (i + 1) * j;
+			}
+
+			console.log(typeof (a4));
+			printIt(a4[0]);
+			printIt(a4[1]);
+			printIt(a4[2]);
+			printIt(a4);
+			printItRec(a4);
+
+			// Really, the console does a very good job of logging arrays
+			console.log(a4);
+
+			console.log("\n\n\n\n\n");
+
+			console.log("6: sixth block")
+			const x = Array(1, 2, 3, 4);
+			const y = Array(1, 2, 3, 4);
+			const z = x;
+			z[0] = 100;
+			
+			printIt(x);
+			if (x == y) {
+				console.log("x == y");
+			}
+			if (x == z) {
+				console.log("x == z");
+			}
+			z[4] = 5;
+			printIt(x);
+
+			// other way of creating arrays and adding values into into
+			const xyz = [ ];   // [1, 2, 3, 4]
+			xyz.push(15);
+			xyz.push(23);
+			printIt(xyz);
 		}
-		z[4] = 5;
-		printIt(x);
-	}
-</script>
+	</script>
 </head>
+
 <body>
 	<script type="text/javascript">
 		main();
 	</script>
 	<h1>Check the JS console</h1>
 </body>
+
 </html>

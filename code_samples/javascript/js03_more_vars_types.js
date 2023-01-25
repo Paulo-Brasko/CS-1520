@@ -42,7 +42,7 @@ function demo() {
 
 
 	const s1 = "a string";
-	const s2 = "a string";
+	const s2 = "A string";
 	const s3 = s1;
 
 	// Expected result:  

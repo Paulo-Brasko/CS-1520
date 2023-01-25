@@ -19,4 +19,4 @@ def get_items():
 	return json.dumps(items)
 	
 if __name__ == "__main__":
-	app.run()
+	app.run(debug=True)

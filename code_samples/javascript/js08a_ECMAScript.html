@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <script>
+         // regular function
+        function straighLine(a, b, x) {
+            let value = a * x + b;
+            return value;
+        }
+        let y1 = straighLine(2,5, 4.5);
+        console.log(y1);
+
+        // fat arrow representation
+        let y2 = (a,b,x) => {
+            let value = a * x + b;
+            return value;
+        }
+        
+        let value2 = y2(3,4,1);
+        console.log(value2);
+
+        // more concise forms
+        let y3 = (a, b, x) => {return a * x + b;};
+        let y4 = (a, b, x) => a * x + b;
+
+        // fat arrow with no input argument
+        let sayHello = () => console.log("Hello");
+
+        // iterables
+        let ages = [10, 20, 30];  // in or of
+        ages["banana"] = "a dozen";
+        for (let value in ages) {
+            console.log(value);
+        }
+
+        for (let value in ages) {
+            console.log(ages[value]);
+        }
+
+        // class Person with name and age
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            display() {
+                console.log("Name: " + this.name);
+                console.log("Age: " + this.age);
+            }
+        }
+
+        // creating Persons
+        let Joana = new Person("Joana", 25);
+        let Pablo = new Person("Pablo", 23);
+        let Maria = new Person("Maria", 21);
+
+        // creating array with persons
+        let clubMembers = [Joana, Pablo, Maria];
+        // looping over the array and displaying member features
+        for (let member of clubMembers) {
+            console.log(member.display());
+        }
+
+        class Student extends Person {
+            constructor(name, age, major) {
+                super(name, age);
+                this.major = major;
+            }
+
+            display() {
+                super.display();
+                console.log(`Major: ${this.major}`);
+            }
+        }
+
+        let Cory = new Student("Cory", 19, "Computer Science");
+        Cory.display();
+
+    </script>
+</body>
+
+</html>

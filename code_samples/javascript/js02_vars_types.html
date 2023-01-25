@@ -3,12 +3,13 @@
 <head>
 <title>JS Variables and Types</title>
 <script type = "text/javascript">
-	const x = 12;
-
+	var numOfDaysInWeek = 7;
+	var x = 12;
 	const y1 = "5";
 	const y2 = "bogus";
+	numOfDaysInWeek = 8;
 
-	const z1 = x + y1;
+	const z1 = x + y1;   
 	const z2 = x + parseInt(y1);
 	const z3 = x * y1;
 	const z4 = x * y2;
@@ -22,9 +23,8 @@
 	// Expected result:  
 	console.log(`3: ${x} * ${y1} = ${z3}`);
 
-
 	// Expected result:  
-	console.log(`4: ${typeof(z4)}`);
+	console.log(`4: ${z4}: ${typeof(z4)}`);
 
 	// Expected result:  
 	console.log(`5: ${x} * ${y2} = ${z4}`);

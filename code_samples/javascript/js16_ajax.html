@@ -3,6 +3,7 @@
 	<title>Simple AJAX example</title>
 	<script type="text/javascript">
 		let xhr = new XMLHttpRequest();
+		var outputResultsElement;
 
 		function req_test() {
 			makeRequest("js16_text.txt");
@@ -12,7 +13,7 @@
 			xhr = new XMLHttpRequest();
 
 			if (!xhr) {
-				console.log("Could not create an XMLHttpRequest instance");
+				outputResultsElement.value = "Could not create an XMLHttpRequest instance";
 				return false;
 			}
 			
@@ -22,17 +23,20 @@
 		}
 
 		function logResponse() {
+			console.log(xhr.readyState);
 			if (xhr.readyState === XMLHttpRequest.DONE) {
 				if (xhr.status === 200) {
 					console.log("Request completed successfully:");
-					console.log(xhr.responseText);
+					outputResultsElement.value = xhr.responseText;
 				} else {
 					console.log("There was a problem with the request.");
+					outputResultsElement.value = "There was a problem with the request.";
 				}
 			}
 		}
 
 		function setup() {
+			outputResultsElement = document.getElementById("outputResults");
 			document.getElementById("ajaxButton").addEventListener("click", req_test);
 		}
 
@@ -41,5 +45,10 @@
 </head>
 <body>
 	<input type="button" id="ajaxButton" value="Make a request" />
+	<br>
+	<label for="outputResults">Request Response:</label>
+	<br>
+	<textarea id="outputResults" name="outputResults" rows="4" cols="50" placeholder="http request results...">
+	</textarea>
 </body>
 </html>

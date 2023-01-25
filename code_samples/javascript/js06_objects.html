@@ -3,13 +3,10 @@
 <head>
 <title>JS Objects</title>
 <script type="text/javascript">
-	function by_size(a, b) {
-		return a.size - b.size;
-	}
-
-	function TV(brand, size, injacks, outjacks) {
+	function TV(brand, size, price, injacks, outjacks) {
 		this.brand = brand;
 		this.size = size;
+		this.price = price;
 		this.jacks = new Object();
 		this.jacks.input = injacks;
 		this.jacks.output = outjacks;
@@ -20,6 +17,7 @@
 		console.log("This is the TV:");
 		console.log(`Brand: ${this.brand}`);
 		console.log(`Size: ${this.size}`);
+		console.log(`Price: ${this.price}`);
 		console.log("Input Jacks:");
 		console.log(`${this.jacks.input}`);
 		console.log("Output Jacks:");
@@ -28,26 +26,60 @@
 	}
 
 	function main() {
-		var my_tv = new TV("Samsung", 46, 5, 2);
-		var your_tv = new TV("Sharp", 60, 8, 1);
+		var my_tv = new TV("Samsung", 46, 599.00, 5, 2);
+		var your_tv = new TV("Sharp", 60, 399.00, 8, 1);
+		var her_tv = new TV("Sharp", 50, 450.00, 8, 1);
 
+		console.log("block #1");
 		// Note you can attach methods outside of constructor
-		your_tv.other_display = show_properties;
+		your_tv.price = 350.00;
+		your_tv["price"] = 350.00;
 
-		my_tv.display();
-		your_tv.display();
-		your_tv.other_display();
-
-		if (by_size(my_tv, your_tv) > 0)
-			console.log("My TV is bigger");
+		console.log("block #2");
+		// how to display the TV features?
+		her_tv.display();
+		
+		console.log("block #3");
+		// how to compare two tv sizes?
+		if(my_tv.price > your_tv.price)
+			console.log("My TV is more expensive");
 		else
-			console.log("Your TV is bigger");
+			console.log("Your TV is more expensive");
 			
+		console.log("block #4");
 		console.log(`My TV is a(n) ${typeof(my_tv)}`);
 		if (my_tv instanceof TV) {
 			console.log("My TV is a TV");
 		}
+
+		console.log("block #5");
+		let myHouseTVs = [my_tv, your_tv, her_tv]; // array of TVs
+		for (let i=0; i<myHouseTVs.length; i++) {
+			console.log(myHouseTVs[i].display());
+		}
+
+		function by_size(a, b) {
+			return a.size - b.size;
+		}
+
+		console.log("block #6");
+		myHouseTVs.sort(by_size);  // sort by what? multiple features
+		for (let i=0; i<myHouseTVs.length; i++) {
+			console.log(myHouseTVs[i].display());
+		}
+
+		function by_price(a, b) {
+			return a.price - b.price;
+		}
+
+		console.log("block #7");
+		myHouseTVs.sort(by_price);  // sort by price here
+		for (let i=0; i<myHouseTVs.length; i++) {
+			console.log(myHouseTVs[i].display());
+		}
+
 	}
+
 </script>
 </head>
 <body>

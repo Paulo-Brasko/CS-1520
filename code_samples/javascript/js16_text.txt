@@ -1,1 +1,9 @@
 this is the text.txt file!
+Ajax is not a technology, but rather a programming concept. 
+HTML and CSS can be used in combination to mark up and style information. 
+The webpage can be modified by JavaScript to dynamically display and 
+allow the user to interact with the new information. 
+The built-in XMLHttpRequest object is used to execute Ajax on webpages, 
+allowing websites to load content onto the screen without refreshing the page. 
+Ajax is not a new technology, nor is it a new language. 
+Instead, it is existing technologies used in a new way.

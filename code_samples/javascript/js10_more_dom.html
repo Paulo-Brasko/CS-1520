@@ -8,17 +8,18 @@
 	let clickCount = 0;
 
 	function clickTheBox() {
-		document.getElementById("theBox").click();
+		document.getElementById("theCheckbox").click();
 		clickCount++;
-		document.getElementById("theButton").textContent = "Clicks: " + clickCount;
+		//document.getElementById("theButton").textContent = "Clicks: " + clickCount;
+		document.getElementById("firstButton").value = "Clicks: " + clickCount;
 	}
 
-	function boxClick() {
-		const val = document.getElementById("theText").value;
-		document.getElementById("theText").value = val + "Wacky";
+	function checkboxClick() {
+		const val = document.getElementById("theTextfield").value;
+		document.getElementById("theTextfield").value = val + " Wacky";
 	}
 
-	function clickByName() {
+	function clickButtonByName() {
 		const b = prompt("Id of button?");
 		document.getElementById(b).click();
 	}
@@ -29,9 +30,9 @@
 	function makeNewButton() {
 		const elt = document.createElement("input");
 		elt.setAttribute("type", "button");
-		input = prompt("Id of input?");
+		input = prompt("Id of the new button?");
 		elt.setAttribute("id", input);
-		input = prompt("Value of input?");
+		input = prompt("Caption of the new button?");
 		elt.setAttribute("value", input);
 
 		// This is an example of the types of hoops web developers of days past
@@ -51,8 +52,8 @@
 		// somewhere.  We can do this via the DOM 1 methods getElementById
 		// and appendChild.  The appendChild method actually updates the DOM
 		// tree dynamically.
-		const F = document.getElementById("theForm");
-		F.appendChild(elt);
+		const theFormObject = document.getElementById("theForm");
+		theFormObject.appendChild(elt);
 	}
 
 	// This is a DOM 0 way of changing the title of a web page
@@ -72,11 +73,11 @@
 
 	function setup() {
 		// Attache event listeners
-		document.getElementById("theButton").addEventListener("click", clickTheBox);
-		document.getElementById("theBox").addEventListener("click", boxClick);
-		document.getElementById("clickButton").addEventListener("click", clickByName);
-		document.getElementById("chTitle").addEventListener("click", changeTitle2);
-		document.getElementById("makeButton").addEventListener("click", makeNewButton);
+		document.getElementById("firstButton").addEventListener("click", clickTheBox);
+		document.getElementById("theCheckbox").addEventListener("click", checkboxClick);
+		document.getElementById("selectButton").addEventListener("click", clickButtonByName);
+		document.getElementById("changeTitleButton").addEventListener("click", changeTitle2);
+		document.getElementById("makeNewButton").addEventListener("click", makeNewButton);
 	}
 
 	// Run setup after page had loaded
@@ -85,13 +86,13 @@
 </head>
 <body>
 	<form id="theForm" onsubmit="return false">
-		<input type="button" id="theButton" value="Make it Wacky"/>
-		<input type="checkbox" id="theBox" />
-		<input type="text" id="theText" size="50" value="Bizzaro"/>
+		<input type="button" id="firstButton" value="Make it Wacky"/>
+		<input type="checkbox" id="theCheckbox" />
+		<input type="text" id="theTextfield" size="50" value="Bizzaro"/>
 		<br/>
-		<input type="button" id="clickButton" value="Select a Button"/>
-		<input type="button" id="chTitle" value="Change the Title"/>
-		<input type="button" id="makeButton" value="Make an element"/>
+		<input type="button" id="selectButton" value="Select a Button"/>
+		<input type="button" id="changeTitleButton" value="Change the Title"/>
+		<input type="button" id="makeNewButton" value="Make an element"/>
 	</form>
 </body>
 </html>
