@@ -3,15 +3,16 @@ var inputValue;
 var buttonInsertLocal;
 var buttonInsertSession;
 var deleteKey;
-var buttonDeleteStorage;
+var buttonDeleteLocal;
 var buttonDeleteSession;
 var outputLocalList;
 var outputSessionList;
     
 window.onload = (event) => {
-    listLocalStorage();
     configureDOMElementReferences();
     configureDOOMElementListeners();
+    listLocalStorage();
+    // do we need to listSessionStorage here????
 }
 
 configureDOMElementReferences = () => {
@@ -21,7 +22,7 @@ configureDOMElementReferences = () => {
     buttonInsertSession = document.getElementById("buttonInsertSession");
 
     deleteKey = document.getElementById("deleteKey");
-    buttonDeleteStorage = document.getElementById("buttonDeleteStorage");
+    buttonDeleteLocal = document.getElementById("buttonDeleteLocal");
     buttonDeleteSession = document.getElementById("buttonDeleteSession");
     outputLocalList = document.getElementById("outputLocalList");
     outputSessionList = document.getElementById("outputSessionList");
@@ -46,7 +47,6 @@ listSessionStorage = function () {
 
 configureDOOMElementListeners = () => {
     buttonInsertLocal.onclick = function () {
-        console.log("banana");
         // retrieving and storing the key and value from page the text input fields
         retrieveAndStoreData("local");
 
@@ -69,9 +69,9 @@ configureDOOMElementListeners = () => {
         // empty the input fields
         emptyInputFields();
     };
-    buttonDeleteStorage.onclick = function () {
+    buttonDeleteLocal.onclick = function () {
         // retrieve key from HTML input field and delete data from storage
-        retrieveAndDeleteData("storage");
+        retrieveAndDeleteData("local");
 
         // update the list of local store data in the page
         listLocalStorage();
