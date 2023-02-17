@@ -1,4 +1,9 @@
 
+var insertKeyTextInput;
+var inserValueTextInput;
+var insertItemButton;
+var deleteKeyTextInput;
+
 window.addEventListener("load", setup);
 
 function setup() {
@@ -16,10 +21,10 @@ function setup() {
 
 // one way to define a function
 function configureDOMElementReferences() {
-    const insertKeyTextInput = document.getElementById("insertKeyTextInput");
-    const inserValueTextInput = document.getElementById("insertValueTextInput");
-    const insertItemButton = document.getElementById("insertItemButton");
-    const deleteKeyTextInput = document.getElementById("deleteKeyTextInput");
+    insertKeyTextInput = document.getElementById("insertKeyTextInput");
+    inserValueTextInput = document.getElementById("insertValueTextInput");
+    insertItemButton = document.getElementById("insertItemButton");
+    deleteKeyTextInput = document.getElementById("deleteKeyTextInput");
 
     // add code here for the outputList, delete item, and clear storage buttons
 }
