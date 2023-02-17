@@ -1,4 +1,13 @@
-
+var inputKey;
+var inputValue;
+var buttonInsertLocal;
+var buttonInsertSession;
+var deleteKey;
+var buttonDeleteStorage;
+var buttonDeleteSession;
+var outputLocalList;
+var outputSessionList;
+    
 window.onload = (event) => {
     listLocalStorage();
     configureDOMElementReferences();
@@ -6,16 +15,16 @@ window.onload = (event) => {
 }
 
 configureDOMElementReferences = () => {
-    const inputKey = document.getElementById("inputKey");
-    const inputValue = document.getElementById("inputValue");
-    const buttonInsertLocal = document.getElementById("buttonInsertLocal");
-    const buttonInsertSession = document.getElementById("buttonInsertSession");
+    inputKey = document.getElementById("inputKey");
+    inputValue = document.getElementById("inputValue");
+    buttonInsertLocal = document.getElementById("buttonInsertLocal");
+    buttonInsertSession = document.getElementById("buttonInsertSession");
 
-    const deleteKey = document.getElementById("deleteKey");
-    const buttonDeleteStorage = document.getElementById("buttonDeleteStorage");
-    const buttonDeleteSession = document.getElementById("buttonDeleteSession");
-    const outputLocalList = document.getElementById("outputLocalList");
-    const outputSessionList = document.getElementById("outputSessionList");
+    deleteKey = document.getElementById("deleteKey");
+    buttonDeleteStorage = document.getElementById("buttonDeleteStorage");
+    buttonDeleteSession = document.getElementById("buttonDeleteSession");
+    outputLocalList = document.getElementById("outputLocalList");
+    outputSessionList = document.getElementById("outputSessionList");
 }
 
 listLocalStorage = function () {
