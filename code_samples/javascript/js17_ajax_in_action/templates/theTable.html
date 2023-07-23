@@ -5,7 +5,10 @@
 		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
 	</head>
 	<body>
-		<table>
+		<h1>This is the Company Logo</h1>
+		<h2>This is the navigation bar</h2>
+		<h3>This this the table with inputs from the server</h3>
+		<table id="tableId">
 			{% for i in items %}
 				<tr>
 					{% for j in i %}
@@ -16,6 +19,7 @@
 				<tr><td>Whole lot of nothing!</td></tr>
 			{% endfor %}
 		</table>
+		<br><br>
 		<h3> Add new row: </h3>
 		<form name="theForm">
 			<input type="text" id="a" name="a" value="" />
@@ -23,5 +27,10 @@
 			<input type="text" id="c" name="c" value="" />
 			<input type="button" id="theButton" value="enter" />
 		</form>
+
+		<input type="button" id="get_entries" value="get entries" />
+
+		<h2>This is the page footer</h2>
+		<p>This is the copyright statement</p>
 	</body>
 </html>
