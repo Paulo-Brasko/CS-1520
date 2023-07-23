@@ -6,14 +6,19 @@ items = [[1, 2, 3], ["a", "b", "c"]]
 
 @app.route("/")
 def default():
-	return  render_template("theTable.html", items=items)
+	return render_template("theTable.html", items=items)
 
-@app.route("/new_item", methods=["POST"])
+@app.route("/new_item/", methods=["POST"])
 def add():
 	print("inside new_item route")
 	items.append([request.form["one"], request.form["two"], request.form["three"]])
 	return "OK!"
-				
+
+@app.route("/items/")
+def get_items():
+	print("inside items route")
+	return items;
+
 if __name__ == "__main__":
 	app.run()
 
